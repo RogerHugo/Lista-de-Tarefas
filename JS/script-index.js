@@ -1,6 +1,8 @@
 window.onload = function(){
     GetTarefas()
 }
+
+/* #######  FUNÇÕES de Requisição ########### */
 function GetTarefas()
 {
     fetch("api/tarefas/")
@@ -8,8 +10,6 @@ function GetTarefas()
     .then(data => carregarDados(data))
     .catch(error => console.error("Erro", error))   
 }
-console.log()
-
 
 function CreateTarefa(titulo, conteudo)
 {
@@ -47,6 +47,12 @@ function PutTarefa(id, titulo, conteudo)
     .catch(error => console.error("erro:", error))
 }
 
+/* ############*/
+
+function EditarTarefa(id)
+{
+    window.open("criar-tarefa.php?id="+id)
+}
 
 //===================================================
 //             FUNÇÕES SECUNDÀRIAS
@@ -67,7 +73,7 @@ function carregarDados(data)
 
 function addTarefa(id, titulo, conteudo)
 {
-    let botoes = `<div> <button onclick = 'PutTarefa(${id}, ${titulo}, ${conteudo})'>Editar</button> <button onclick = 'DeleteTarefa(${id})'>Excluir</button> </div>`
+    let botoes = `<div> <button onclick = 'EditarTarefa(${id})'>Editar</button> <button onclick = 'DeleteTarefa(${id})'>Excluir</button> </div>`
     let tarefa = `<div id = 'tarefa'><div><h2>${titulo}</h2><p>${conteudo}<p></div>${botoes}</div>`
     
     document.querySelector("div#tarefas").innerHTML += tarefa   
@@ -78,3 +84,4 @@ function AtualizarDados()
     document.querySelector("div#tarefas").innerHTML = "" 
     GetTarefas()
 }
+

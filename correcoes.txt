@@ -1,1 +1,5 @@
 excluir, editar , get tarefa(id) retornam sucess mesmo sem existir o registo
+
+adicionar verificação das requisições
+
+adocionar estruturas de dados nas tarefas

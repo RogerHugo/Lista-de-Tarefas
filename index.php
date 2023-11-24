@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div id = "header">
+    <header>
         <button>Criar Tarefa</button>
-    </div>
-    <div id = "tarefas">
+    </header>
+    <main>
+        <div id = "tarefas">
         <!--
         <div id = "tarefa">
             <div>
@@ -22,8 +23,13 @@
                 <button>Excluir</button>
             </div>
         </div>-->
-    </div>
-    <button onclick="EditarTarefa(21, 'porra', 'Fuck')">Fazer</button>
-    <script src = "script.js"></script>
+        </div>
+        <button onclick="EditarTarefa(21, 'gege','geg')">Fazer</button>
+    </main>
+    <footer>
+        Programa feito por Róger Hugo
+    </footer>
+    
+    <script src = "JS/script-index.js"></script>
 </body>
 </html>
