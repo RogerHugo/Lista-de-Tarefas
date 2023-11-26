@@ -3,3 +3,13 @@ excluir, editar , get tarefa(id) retornam sucess mesmo sem existir o registo
 adicionar verificação das requisições
 
 adocionar estruturas de dados nas tarefas
+
+fazer modularização no JS
+
+function teste()
+{
+    let dados = GetTarefa(24)
+    console.log(dados)
+    let n = dados.then(data => console.log(data)).value
+    console.log(n)
+}

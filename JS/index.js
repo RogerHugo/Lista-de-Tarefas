@@ -11,18 +11,6 @@ function GetTarefas()
     .catch(error => console.error("Erro", error))   
 }
 
-function CreateTarefa(titulo, conteudo)
-{
-    const url = "api/tarefas/criar.php"
-    const data = { titulo: titulo, conteudo: conteudo }
-    const options = { method: "POST", headers: {'Content-Type': 'application/json'}, body:JSON.stringify(data) } 
-
-    fetch(url,options)
-    .then(response => response.json())
-    .then(data => console.log(data), AtualizarDados())
-    .catch(error => console.error("erro:",error))
-}
-
 function DeleteTarefa(id)
 {
     const url = "api/tarefas/excluir.php"
@@ -31,27 +19,25 @@ function DeleteTarefa(id)
 
     fetch(url, options)
     .then(response => response.json())
-    .then(data => console.log(data), AtualizarDados())
+    .then(data => {
+        if(data.status == "sucess"){
+            alert("Sucess")
+        }
+        console.log(data)
+        AtualizarDados()
+    })
     .catch(error => console.error("Erro:", error))
 }
 
-function PutTarefa(id, titulo, conteudo)
-{
-    const url = "api/tarefas/editar.php"
-    const data = {id: id, titulo: titulo, conteudo: conteudo}
-    const options = {method: "PUT", headers: {"Content-Type": "application/json"}, body: JSON.stringify(data)}
-
-    fetch(url, options)
-    .then(response => response.json())
-    .then(data => console.log(data), AtualizarDados())
-    .catch(error => console.error("erro:", error))
-}
-
 /* ############*/
-
+function CriarTarefa()
+{
+    location.href = "criar-tarefa.php"
+}
 function EditarTarefa(id)
 {
-    window.open("criar-tarefa.php?id="+id)
+    location.href = "editar-tarefa.php?id="+id
+    //window.open("editar-tarefa.php?id="+id, "_self")
 }
 
 //===================================================

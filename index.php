@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de tarefas</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/all.css">
 </head>
 <body>
     <header>
-        <button>Criar Tarefa</button>
+        <button onclick="CriarTarefa()">Criar Tarefa</button>
     </header>
     <main>
         <div id = "tarefas">
@@ -24,12 +25,11 @@
             </div>
         </div>-->
         </div>
-        <button onclick="EditarTarefa(21, 'gege','geg')">Fazer</button>
     </main>
     <footer>
-        Programa feito por Róger Hugo
+        <p>Programa feito por <a href = "https://github.com/rogerhugo">Róger Hugo</a><p>
     </footer>
     
-    <script src = "JS/script-index.js"></script>
+    <script src = "JS/index.js"></script>
 </body>
 </html>
